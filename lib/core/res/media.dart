@@ -7,4 +7,5 @@ abstract class Media {
   static const _baseSvg = "assets/svgs";
 
   //splash screen icon
+  static const logo = "$_baseSvg/logo.svg";
 }

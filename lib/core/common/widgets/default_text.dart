@@ -13,7 +13,7 @@ class DefaultText extends StatelessWidget {
         this.color,
         this.letterSpacing,
       });
-
+  
   final double? fontSize;
   final FontWeight? fontWeight;
   final String? fontFamily;
