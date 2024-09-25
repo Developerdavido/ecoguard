@@ -1,4 +1,5 @@
 import 'package:ecoguard_project/core/common/extensions/context_extensions.dart';
+import 'package:ecoguard_project/core/common/widgets/ecoguard_logo.dart';
 import 'package:ecoguard_project/core/res/colors.dart';
 import 'package:ecoguard_project/src/authentication/views/sections/sign_in_form.dart';
 import 'package:ecoguard_project/src/authentication/views/sign_up_page.dart';
@@ -45,38 +46,15 @@ class _SignInPageState extends State<SignInPage> {
               Expanded(
                 child: ListView(
                   children: [
+                    Gap(context.height * 0.1),
+                    const EcoguardLogo(baseColor: AppColors.primaryColor,),
+                    const Gap(40),
                     const DefaultText(
-                      'Welcome back!',
-                      fontSize: 24,
+                      'Log In',
+                      fontSize: 18,
+                      color: AppColors.primaryColor,
                       fontWeight: FontWeight.bold,
                      // fontFamily: 'Mulish',
-                    ),
-                    const DefaultText(
-                      'Sign in to continue',
-                      fontSize: 13,
-                      color: Colors.grey,
-                    ),
-                    const Gap(40),
-                    RichText(
-                      text: TextSpan(
-                        text: "Don't have an account? ",
-                        style: const TextStyle(color: Colors.grey),
-                        children: [
-                          TextSpan(
-                            text: 'Sign Up',
-                            style: const TextStyle(
-                              color: AppColors.primaryColor,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () {
-                                Navigator.of(context).pushReplacementNamed(
-                                  SignUpPage.path,
-                                );
-                              },
-                          ),
-                        ],
-                      ),
                     ),
                     const Gap(40),
                     SignInForm(
@@ -85,27 +63,53 @@ class _SignInPageState extends State<SignInPage> {
                       passwordCtrl: _passwordController,
                     ),
                     const Gap(20),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: TextButton(
-                        onPressed: () {},
-                        child: const DefaultText(
-                          'Forgot Password?',
-                          fontSize: 13,
-                        ),
-                      ),
-                    ),
+                    // Align(
+                    //   alignment: Alignment.centerRight,
+                    //   child: TextButton(
+                    //     onPressed: () {},
+                    //     child: const DefaultText(
+                    //       'Forgot Password?',
+                    //       fontSize: 13,
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
               FilledButton(
+                style: FilledButton.styleFrom(
+                  backgroundColor: AppColors.primaryColor,
+                  foregroundColor: AppColors.onPrimaryColor
+                ),
                 onPressed: () {
                   //TODO: move on to the home page
                   // if (_formKey.currentState!.validate()) {
                   //   Navigator.of(context).pushReplacementNamed(TripOverviewPage.path);
                   // }
                 },
-                child: const Text('Sign In'),
+                child: const DefaultText("Log In", fontWeight: FontWeight.w500, color: AppColors.onPrimaryColor,),
+              ),
+              const Gap(27),
+              RichText(
+                text: TextSpan(
+                  text: "Already have an account? ",
+                  style: const TextStyle(color: Colors.black),
+                  children: [
+                    TextSpan(
+                      text: 'Sign Up',
+                      style: const TextStyle(
+                        color: AppColors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          Navigator.of(context).pushReplacementNamed(
+                            SignUpPage.path,
+                          );
+                        },
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

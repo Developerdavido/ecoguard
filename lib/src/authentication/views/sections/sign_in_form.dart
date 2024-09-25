@@ -32,6 +32,7 @@ class _SignInFormState extends State<SignInForm> {
           InputField(controller: widget.emailCtrl,
             keyboardType: TextInputType.emailAddress,
             labelText: "Email",
+            hintText: "Enter e-mail address",
           ),
            const Gap(40),
           ValueListenableBuilder<bool>(
@@ -41,6 +42,7 @@ class _SignInFormState extends State<SignInForm> {
                     controller: widget.passwordCtrl,
                   keyboardType: TextInputType.visiblePassword,
                   labelText: "Password",
+                  hintText: "Enter password",
                   obscureText: obscureText,
                   suffixIcon: IconButton(
                     icon: Icon(
