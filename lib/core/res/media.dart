@@ -8,4 +8,5 @@ abstract class Media {
 
   //splash screen icon
   static const logo = "$_baseSvg/logo.svg";
+  static const ecoGuard = "$_baseSvg/ecoguard_logo.svg";
 }

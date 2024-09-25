@@ -1,8 +1,13 @@
 import 'package:ecoguard_project/core/common/routes/route.dart';
 import 'package:ecoguard_project/core/res/colors.dart';
+import 'package:ecoguard_project/core/utils/cache_helper.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final prefs = await SharedPreferences.getInstance();
+  CacheHelper.instance.init(prefs);
   runApp(const MyApp());
 }
 
